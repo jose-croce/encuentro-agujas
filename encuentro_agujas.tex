@@ -1,0 +1,135 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage[official]{eurosym}
+
+\author{Jos\'e Ignacio Croce Busquets}
+\date{30 de Diciembre de 2009}
+\title{C\'alculo de la posici\'on de encuentro de las agujas del reloj}
+
+\pagestyle{plain}
+
+\newcommand{\boxedeqn}[1]{%
+  \[\fbox{%
+      \addtolength{\linewidth}{-2\fboxsep}%
+      \addtolength{\linewidth}{-2\fboxrule}%
+      \begin{minipage}{\linewidth}%
+      \begin{equation}#1\end{equation}%
+      \end{minipage}%
+    }\]%
+}
+
+\begin{document}
+\maketitle
+\begin{description}
+\item[Problema:]
+Para un reloj de agujas anal\'ogico (o sea que las agujas se mueven a
+velocidad constante y sin pegar saltitos) y partiendo de las 12hs en punto,
+calcular las horas exactas a las que las agujas de los minutos y las de las
+horas se vuelven a superponer.
+
+\item[Soluci\'on:]
+Dado que la aguja de los minutos da una vuelta completa por hora, podemos
+deducir la velocidad angular de la misma como:
+\begin{equation}
+\omega_m = \frac{360\,^\circ}{60\,min} = 6\,^\circ/min \label{omegam}
+\end{equation}
+
+Mientras que para la aguja de las horas tenemos:
+\begin{equation*}
+\omega_h = \frac{360\,^\circ}{12\,h} = 30\,^\circ/h
+\end{equation*}
+
+Que, expresado en grados por minuto resulta en:
+\begin{equation}
+\omega_h = \frac{30\,^\circ}{1\,h} \times \frac{1\,h}{60min} = 0,5\,^\circ/min
+\label{omegah}
+\end{equation}
+
+Si tomamos la posici\'on inicial (o sea el punto de $0\,^\circ$) como las 12
+horas en punto, tenemos que el \'angulo $\alpha$ que avanza cada una de las
+agujas en funci\'on del tiempo transcurrido es:
+\begin{align}
+\alpha_m(t) &= \omega_mt \label{alpham} \\
+\alpha_h(t) &= \omega_ht \label{alphah}
+\end{align}
+
+Partiendo de esta posici\'on inicial de las 12 horas, el pr\'oximo instante
+(que denominaremos $t_1$) al que las agujas se vuelvan a encontrar ser\'a
+cuando la aguja de los minutos haya completado una vuelta completa. O sea:
+\begin{equation}
+\alpha_m(t_1) = \alpha_h(t_1) + 360\,^\circ
+\label{meet1}
+\end{equation}
+
+Y, reemplazando \eqref{alpham} y \eqref{alphah} en \eqref{meet1} resulta:
+\begin{equation*}
+\omega_m t_1 = \omega_h t_1 + 360\,^\circ
+\end{equation*}
+
+De donde podemos depejar $t_1$ como:
+\begin{gather*}
+\omega_m t_1 - \omega_h t_1 = 360\,^\circ\\
+t_1 (\omega_m - \omega_h) = 360\,^\circ\\
+t_1 = \frac {360\,^\circ} {\omega_m - \omega_h} \\
+\end{gather*}
+
+Que, con los valores de velocidad angular deducidos en \eqref{omegam} y
+\eqref{omegah} resulta enun valor de $t_1$ igual a:
+\boxedeqn{%
+t_1 = \frac{360\,^\circ}{6\,^\circ/min - 0,5\,^\circ/min} =
+65.\overline{45}min =
+1\,\text{hora}\,5\,\text{min}\,27.\overline{27}\,\text{seg}
+\nonumber
+}
+
+Para el pr\'oximo punto de encuentro (que denominaremos $t_2$), la aguja de
+los minutos habr\'a dado ya dos vueltas completas. Y para el tercer punto de
+encuentro las vueltas de la aguja de los minutos habr\'an sido tres. Y
+as\'\i{} para cada uno de los puntos de encuentro subsiguientes. Lo que es lo
+mismo a decir:
+\begin{align*}
+t_2 = \frac {2 \times 360\,^\circ} {\omega_m - \omega_h} \\
+t_3 = \frac {3 \times 360\,^\circ} {\omega_m - \omega_h} \\
+t_4 = \frac {4 \times 360\,^\circ} {\omega_m - \omega_h} \\
+t_5 = \frac {5 \times 360\,^\circ} {\omega_m - \omega_h} \\
+t_6 = \frac {6 \times 360\,^\circ} {\omega_m - \omega_h} \\
+t_7 = \frac {7 \times 360\,^\circ} {\omega_m - \omega_h} \\
+t_8 = \frac {8 \times 360\,^\circ} {\omega_m - \omega_h} \\
+t_9 = \frac {9 \times 360\,^\circ} {\omega_m - \omega_h} \\
+t_{10} = \frac {10 \times 360\,^\circ} {\omega_m - \omega_h} \\
+t_{11} = \frac {11 \times 360\,^\circ} {\omega_m - \omega_h} \\
+\end{align*}
+
+Con lo que podemos construir la siguiente tabla:
+
+\begin{center}
+\begin{tabular}{|c|l|}
+\hline
+Encuentro & Hora \\
+\hline
+$t_1$ & $1\,\text{hora}\,5\,\text{min}\,27.\overline{27}\,\text{seg}$ \\
+$t_2$ & $2\,\text{horas}\,10\,\text{min}\,54.\overline{54}\,\text{seg}$ \\
+$t_3$ & $3\,\text{horas}\,16\,\text{min}\,21.\overline{81}\,\text{seg}$ \\
+$t_4$ & $4\,\text{horas}\,22\,\text{min}\,49.\overline{09}\,\text{seg}$ \\
+$t_5$ & $5\,\text{horas}\,27\,\text{min}\,16.\overline{36}\,\text{seg}$ \\
+$t_6$ & $6\,\text{horas}\,32\,\text{min}\,43.\overline{63}\,\text{seg}$ \\
+$t_7$ & $7\,\text{horas}\,38\,\text{min}\,10.\overline{90}\,\text{seg}$ \\
+$t_8$ & $8\,\text{horas}\,43\,\text{min}\,38.\overline{18}\,\text{seg}$ \\
+$t_9$ & $9\,\text{horas}\,49\,\text{min}\,5.\overline{45}\,\text{seg}$ \\
+$t_{10}$ & $10\,\text{horas}\,54\,\text{min}\,32.\overline{72}\,\text{seg}$ \\
+$t_{11}$ & $12\,\text{horas}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{description}
+\item[Nota:]
+N\'otese que, al contrario de lo que se pod\'ia llegar a creer, los puntos de
+encuentro a lo largo de una vuelta entera de la aguja de las horas son once y
+no doce ya que, el primer encuentro de las agujas que se produce pasadas las
+\mbox{11 horas} es ya sobre las \mbox{12 horas}.
+\end{description}
+
+\end{description}
+\end{document}
