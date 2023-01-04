@@ -1,18 +1,27 @@
-#Solución al problema de encuentro de las agujas del reloj
+# Solución al problema de encuentro de las agujas del reloj
 
 Se trata de un ejemplo de artículo escrito en Latex como ejemplo.
 
-Describe cómo resolver el problema de hallar las horas a las que se cruzan las
-agujas de un reloj analógico a lo largo del día (que por cierto son sólo 11 y
-no 12 como podría parecer en principio).
+Describe cómo resolver el problema de hallar las horas a las que se cruzan las agujas de un reloj analógico a lo largo del día (que por cierto son sólo 11 y no 12 como podría parecer en principio).
 
-##Generación del fichero de salida
+## Dependencias
 
-Los fuentes se encuentran en el fichero `encuentro_agujas.tex` y,
-para generar la salida se deben utilizar las herramientoas standard de Latex.
+Para generar la salida en PDF desde una máquina Ubuntu (>=22.04) se recomienda la instalación de los siguientes paquetes:
 
-Por ejemplo, para generar una versión del artículo en formato `PDF`
-el comando es:
+- texlive-latex-extra
+- texlive-extra-utils
+- textlive-lang-spanish
 
-> `pdflatex encuentro_agujas.tex`
+## Generación del fichero de salida
+
+Los fuentes se encuentran en los ficheros con extensión .tex y, para generar la salida, se deben utilizar las herramientas standard de Latex.
+
+Para generar una versión del documento en formato `PDF` el comando es:
+
+```bash
+pdflatex encuentro_agujas.tex
+```
+
+> **NOTA:**
+> Puede ser necesario ejecutar el comando dos veces para la resolución de referencias cruzadas.
 
